@@ -84,6 +84,8 @@
 .idea/gradle.xml
 .idea/libraries
 
+.idea/
+
 # Mongo Explorer plugin:
 .idea/mongoSettings.xml
 
@@ -108,3 +110,7 @@ crashlytics-build.properties
 fabric.properties
 /cmake-build-debug/
 /cmake-build-debug/.cmake/
+/Visualizer/.idea/
+/Visualizer/cmake-build-debug/
+/Visualizer/third_party/
+/third_party/

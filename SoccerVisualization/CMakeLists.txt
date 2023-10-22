@@ -6,16 +6,15 @@ set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
 
 #fmt
 include(fmt)
-include_directories("third_party/fmt/include")
+include_directories("../third_party/fmt/include")
 
 #spdlog
 include(spdlog)
-include_directories("third_party/spdlog/include/")
+include_directories("../third_party/spdlog/include/")
 
 #finding opencv
 find_package( OpenCV REQUIRED )
 include_directories({OpenCV_INCLUDE_DIRS})
-
 
 set(SOURCES
         EntryPoint.cpp

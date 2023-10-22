@@ -26,7 +26,7 @@ namespace SoccerCamRecorder {
 
     struct ApplicationSpecification
     {
-        std::string Name = "Hazel Application";
+        std::string Name = "APPLICATIONTITLE";
         std::string WorkingDirectory;
         ApplicationCommandLineArgs CommandLineArgs;
     };
@@ -34,40 +34,23 @@ namespace SoccerCamRecorder {
     class Application
     {
     public:
-        static Application* CreateApplication(ApplicationCommandLineArgs args)
-        {
-            ApplicationSpecification spec;
-            spec.Name = "SoccerCamRecorder";
-            spec.CommandLineArgs = args;
-
-            return new Application(spec);
-        }
-
         Application(const ApplicationSpecification& specification);
         virtual ~Application();
 
         void Close();
-
-//        ImGuiLayer* GetImGuiLayer() { return m_ImGuiLayer; }
 
         static Application& Get() { return *s_Instance; }
 
         const ApplicationSpecification& GetSpecification() const { return m_Specification; }
 
         void SubmitToMainThread(const std::function<void()>& function);
+
     private:
         void Run();
-//        bool OnWindowClose(WindowCloseEvent& e);
-//        bool OnWindowResize(WindowResizeEvent& e);
-
-        void ExecuteMainThreadQueue();
     private:
         ApplicationSpecification m_Specification;
-//        Scope<Window> m_Window;
-//        ImGuiLayer* m_ImGuiLayer;
         bool m_Running = true;
         bool m_Minimized = false;
-//        LayerStack m_LayerStack;
         std::tm m_LastFrameTime = TimeUtils::GetCurrentTimestamp();
 
         std::vector<std::function<void()>> m_MainThreadQueue;
@@ -77,7 +60,13 @@ namespace SoccerCamRecorder {
         friend int ::main(int argc, char** argv);
     };
 
-    // To be defined in CLIENTAPPLICATION
-
+//    Application* CreateApplication(ApplicationCommandLineArgs args)
+//    {
+//        ApplicationSpecification spec;
+//        spec.Name = "Soccer cam recorder";
+//        spec.CommandLineArgs = args;
+//
+//        return new Application(spec);
+//    }
 
 }
