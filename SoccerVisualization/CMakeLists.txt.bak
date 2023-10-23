@@ -1,0 +1,55 @@
+cmake_minimum_required(VERSION 3.26)
+project(SoccerVisualization)
+
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_BUILD_TYPE Release CACHE STRING "Set the build type to Release")
+
+#src
+include_directories(src)
+
+#fmt and spdlog
+include("../fmt.cmake")
+include("../spdlog.cmake")
+
+#finding opencv
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+
+set(SOURCES
+        src/SoccerVisualization.h
+        src/SoccerVisualization/Core/EntryPoint.h
+        src/SoccerVisualization/Utils/CudaUtils.h
+        src/SoccerVisualization/Utils/TimeUtils.h
+        src/SoccerVisualization/Utils/ImageUtils.h
+        src/SoccerVisualization/Utils/Log.h
+        src/SoccerVisualization/Core/Base.h
+        src/SoccerVisualization/Utils/Log.cpp
+        src/SoccerVisualization/Core/Application.cpp
+        src/SoccerVisualization/Core/Application.h
+        src/SoccerVisualization/Core/Layer.cpp
+        src/SoccerVisualization/Core/Layer.h
+        src/SoccerVisualization/Core/LayerStack.cpp
+        src/SoccerVisualization/Core/LayerStack.h
+        src/scrpch.h
+        src/SoccerVisualization/Utils/VideoUtils.h
+        src/SoccerVisualization/VideoReader/VideoReader.cpp
+        src/SoccerVisualization/VideoReader/VideoReader.h
+)
+
+# Create a shared library
+add_library(SoccerVisualization SHARED ${SOURCES})
+target_include_directories(SoccerVisualization PRIVATE ${OpenCV_INCLUDE_DIRS})
+target_include_directories(SoccerVisualization PUBLIC src)
+
+target_link_libraries(SoccerVisualization PRIVATE
+        ${OpenCV_LIBS}
+        spdlog::spdlog
+        fmt::fmt
+)
+
+# Adjust installation paths
+install(TARGETS SoccerVisualization
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib/static)
+install(FILES ${SOURCES} DESTINATION include)

@@ -114,3 +114,10 @@ fabric.properties
 /Visualizer/cmake-build-debug/
 /Visualizer/third_party/
 /third_party/
+*.vcxproj
+*.user
+*.filters
+*.sln
+/.vs/SoccerVisualization
+/bin/Release-windows-x86_64
+/bin-int/Release-windows-x86_64

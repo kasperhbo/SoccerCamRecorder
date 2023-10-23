@@ -1,0 +1,139 @@
+[00:19:48] [warning] SOCCER_RECORDER_CLIENT: ExampleLayer::ExampleLayer constructor
+[00:19:48] [warning] SOCCER_RECORDER_CLIENT: ExampleLayer::OnAttach
+[00:19:48] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:19:54] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:03] [info] SOCCER_RECORDER_CORE: Running application
+[00:20:03] [warning] SOCCER_RECORDER_CLIENT: Time step: 15
+[00:20:03] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:07] [warning] SOCCER_RECORDER_CLIENT: Time step: 4
+[00:20:07] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:10] [warning] SOCCER_RECORDER_CLIENT: Time step: 3
+[00:20:10] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:12] [warning] SOCCER_RECORDER_CLIENT: Time step: 2
+[00:20:12] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:14] [warning] SOCCER_RECORDER_CLIENT: Time step: 2
+[00:20:14] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:14] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:14] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:14] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:14] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:14] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:14] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:14] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:14] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:14] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:14] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:14] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:14] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:14] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:14] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:14] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:14] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:14] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:14] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:14] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:15] [warning] SOCCER_RECORDER_CLIENT: Time step: 1
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:15] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:15] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:15] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:15] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:15] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:15] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:15] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:15] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:15] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:15] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:15] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:15] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:15] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:15] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:15] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:15] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:15] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:15] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:16] [warning] SOCCER_RECORDER_CLIENT: Time step: 1
+[00:20:16] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:16] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:16] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:16] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:16] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:16] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:16] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:16] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:16] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:16] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:16] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:17] [warning] SOCCER_RECORDER_CLIENT: Time step: 1
+[00:20:17] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:17] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:17] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:17] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:17] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:17] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:17] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:17] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:17] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:17] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:17] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:18] [warning] SOCCER_RECORDER_CLIENT: Time step: 1
+[00:20:18] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:18] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:18] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:18] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:18] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:18] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:18] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:18] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:18] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:19] [warning] SOCCER_RECORDER_CLIENT: Time step: 1
+[00:20:19] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:19] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:19] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:19] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:19] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:19] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:19] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:19] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:19] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:20] [warning] SOCCER_RECORDER_CLIENT: Time step: 1
+[00:20:20] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:20] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:20] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:20] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:20] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:20] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:20] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:21] [warning] SOCCER_RECORDER_CLIENT: Time step: 1
+[00:20:21] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:21] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:21] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:21] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:21] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:21] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:21] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:21] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:21] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:21] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:22] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:22] [warning] SOCCER_RECORDER_CLIENT: Time step: 1
+[00:20:22] [info] SOCCER_RECORDER_CORE: VideoReader
+[00:20:22] [warning] SOCCER_RECORDER_CLIENT: Time step: 0
+[00:20:22] [info] SOCCER_RECORDER_CORE: VideoReader

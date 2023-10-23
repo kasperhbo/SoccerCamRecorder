@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.26)
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_BUILD_TYPE Release CACHE STRING "Set the build type to Release")
+
+project(SoccerCamRecorder VERSION 0.1.0 LANGUAGES CXX)
+
+#make
+# Include fmt and spdlog setup
+include(fmt.cmake)
+include(spdlog.cmake)
+
+
+# Add the subprojects
+add_subdirectory(SoccerVisualization)
+add_subdirectory(Recorder)
