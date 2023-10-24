@@ -20,7 +20,6 @@ namespace SoccerCamRecorder {
 
         const char* operator[](int index) const
         {
-//            HZ_CORE_ASSERT(index < Count);
             return Args[index];
         }
     };
@@ -52,7 +51,6 @@ namespace SoccerCamRecorder {
     private:
         ApplicationSpecification m_Specification;
         bool m_Running = true;
-        bool m_Minimized = false;
         std::tm m_LastFrameTime = TimeUtils::GetCurrentTimestamp();
 
         std::vector<std::function<void()>> m_MainThreadQueue;
@@ -62,8 +60,6 @@ namespace SoccerCamRecorder {
         friend int ::main(int argc, char** argv);
 
         LayerStack m_LayerStack;
-
-
     };
 
 // To be defined in CLIENT

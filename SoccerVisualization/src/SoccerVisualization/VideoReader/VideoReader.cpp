@@ -3,7 +3,6 @@
 //
 #include "VideoReader.h"
 
-#include "../Utils/Log.h"
 #include "SoccerVisualization/Utils/VideoUtils.h"
 
 Scope<VideoReader> VideoReader::Create(const VideoProps& props)
@@ -12,43 +11,54 @@ Scope<VideoReader> VideoReader::Create(const VideoProps& props)
 }
 
 VideoReader::VideoReader(const VideoProps& props) { 
-	CORE_INFO("VideoReader", "VideoReader", "VideoReader created");
     Initialize(props);
 }
 
 
 VideoReader::~VideoReader()
 {
-	CORE_INFO("VideoReader", "~VideoReader", "VideoReader destroyed");
     //delete frame;
 }
 
 void VideoReader::Terminate(){
-	CORE_INFO("VideoReader", "Terminate", "VideoReader terminated");
 
 }
 
 bool VideoReader::Initialize(const VideoProps& props) {
-    CORE_INFO("VideoReader", "Initialize", "VideoReader initialized");
+    m_videoData.Width = props.Width;
+    m_videoData.Height = props.Height;
+    m_videoData.Fps = props.fps;
+    m_videoData.VideoLocation = props.VideoLocation;
 
-    m_cudaReader = VideoUtils::OpenStream(props.VideoLocation);
-    
-        
+
+    m_cudaReader = VideoUtils::OpenStream(m_videoData.VideoLocation);
+       
     return true;
 }
 
 
 bool VideoReader::Read()
 {   
-    CORE_INFO("VideoReader", "Read", "VideoReader read frame");
 
+    m_cudaReader->nextFrame(m_frameGPU);
 
-    return true;
-    
+    return true;  
 }
 
-bool VideoReader::Show() {
-    CORE_INFO("VideoReader", "Show", "VideoReader show frame");
+bool VideoReader::Show(cv::Mat frame) {
+    if (frame.empty())
+    {
+        CORE_ERROR("VideoReader", "Show", "Frame is empty");
+		return false;
+    }
 
+    m_lastFrame = frame;
+
+    if (m_lastFrame .empty()) {
+		CORE_ERROR("VideoReader", "Show", "Frame is empty");
+    	return false;
+    }
+
+    cv::imshow(m_videoData.Title, m_lastFrame);
     return true;
 }

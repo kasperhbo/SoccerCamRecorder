@@ -35,17 +35,9 @@ namespace SoccerCamRecorder {
         CORE_INFO("Running application");
 
         while (m_Running) {
-            std::tm currentTime = TimeUtils::GetCurrentTimestamp();
-            double timeStep = TimeUtils::GetTimeDifference(m_LastFrameTime,currentTime);
-            CL_WARN("Time step: {0}", timeStep);
-            m_LastFrameTime = currentTime;
-
-            if(!m_Minimized){
-                for (auto layer : m_LayerStack) {
-                    layer->OnUpdate();
-                }
-            }
-
+            for (auto layer : m_LayerStack) {
+                layer->OnUpdate();
+            }            
         }
     }
 };

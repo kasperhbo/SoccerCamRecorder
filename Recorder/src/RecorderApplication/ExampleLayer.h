@@ -23,7 +23,8 @@ private:
 
 private:
     //SoccerCamRecorder::VideoReader videoReader;
-    Scope<SoccerCamRecorder::VideoReader> videoReader;
-
+    Scope<SoccerCamRecorder::VideoReader> videoReaderLeft;
+    Scope<SoccerCamRecorder::VideoReader> videoReaderRight;
+    Scope<SoccerCamRecorder::VideoProcessor> videoProcessor;
 };
 

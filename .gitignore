@@ -121,3 +121,9 @@ fabric.properties
 /.vs/SoccerVisualization
 /bin/Release-windows-x86_64
 /bin-int/Release-windows-x86_64
+/scripts/__pycache__/SetupOpenCV.cpython-310.pyc
+/scripts/__pycache__/SetupPremake.cpython-310.pyc
+/scripts/__pycache__/SetupPython.cpython-310.pyc
+/scripts/__pycache__/Utils.cpython-310.pyc
+/Recorder/soccer_cam_recorder.log
+/vendor/premake/bin/LICENSE.txt

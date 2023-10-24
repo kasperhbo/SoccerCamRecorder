@@ -6,38 +6,36 @@
 
 #include "SoccerVisualization.h"
 
-#include <opencv2/opencv.hpp>
-#include <opencv2/cudaimgproc.hpp>
-#include <opencv2/cudawarping.hpp>
-#include <opencv2/cudaarithm.hpp>
-#include <opencv2/cudaimgproc.hpp>
-#include <opencv2/cudafeatures2d.hpp>
-#include <opencv2/shape/shape_transformer.hpp>
-#include <opencv2/cudacodec.hpp>
-#include "opencv2/opencv_modules.hpp"
-#include <opencv2/core.hpp>
-#include <opencv2/cudacodec.hpp>
-#include <opencv2/highgui.hpp>
-
 #include <iostream>
 #include <string>
 #include <vector>
 
+//import cv2
+#include <opencv2/opencv.hpp>
+#include <opencv2/core.hpp>
+#include <opencv2/core/cuda.hpp>
+#include <opencv2/cudacodec.hpp>
+#include <opencv2/cudaimgproc.hpp>
+#include <opencv2/cudaarithm.hpp>
+#include <opencv2/cudawarping.hpp>
+
 namespace SoccerCamRecorder {
     struct VideoProps
     {
-        std::string Title;
         std::string VideoLocation;
         uint32_t Width;
         uint32_t Height;
+        uint32_t fps;
 
         VideoProps(
-            const std::string& title = "Video Analyzer",
-            const std::string& videoLocation,
-            uint32_t width = 1600,
-            uint32_t height = 900
+            const std::string& videoLocation = "",
+            uint32_t originalWidth = 4000,
+            uint32_t originalHeight= 3000,
+            uint32_t fps = 25
             )
-            : Title(title), VideoLocation(videoLocation), Width(width), Height(height)
+            : VideoLocation(videoLocation),
+            Width(originalWidth), 
+            Height(originalHeight), fps(fps)
         {
         }
     };
@@ -51,16 +49,34 @@ namespace SoccerCamRecorder {
 
         bool Initialize(const VideoProps& props);
         bool Read();
-        bool Show();
+        bool Show(cv::Mat frame);
 
-        cv::cuda::GpuMat getFrame() const { return m_frame; };
+        cv::cuda::GpuMat GetFrame() const { return m_frameGPU; };
+        cv::Mat GetLastFrameCPU() const { return m_lastFrame; };
 
+        std::string GetTitle() const { return m_videoData.Title; };
+        std::string GetVideoLocation() const { return m_videoData.VideoLocation; };
+
+        unsigned int GetWidth() const { return m_videoData.Width; };
+        unsigned int GetHeight() const { return m_videoData.Height; };
+		unsigned int GetFps() const { return m_videoData.Fps; };
+        
+        
         static Scope<VideoReader> Create(const VideoProps& props = VideoProps());
 
 
     private:
         cv::Ptr<cv::cudacodec::VideoReader> m_cudaReader;
-        cv::cuda::GpuMat m_frame;
+        cv::cuda::GpuMat m_frameGPU;
+        cv::Mat m_lastFrame;
+
+        struct VideoData
+        {
+            std::string Title, VideoLocation;
+            unsigned int Width, Height, Fps;
+        };
+
+        VideoData m_videoData;
     };
 }
 
