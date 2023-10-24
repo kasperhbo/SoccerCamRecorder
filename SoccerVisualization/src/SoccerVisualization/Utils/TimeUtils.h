@@ -9,6 +9,8 @@
 #include <ctime>
 #include <sstream>
 
+#include "SoccerVisualization/Core/Base.h"
+
 namespace SoccerCamRecorder {
     class TimeUtils {
 

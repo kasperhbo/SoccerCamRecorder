@@ -14,10 +14,10 @@ void ExampleLayer::OnAttach() {
     CL_WARN("ExampleLayer::OnAttach");
 
     videoReader = VideoReader::Create(
-        WindowProps(
+        VideoProps(
             "D:\\OPENCV\\Assets\\Left.mp4",
-			1280,
-			720
+            1280,
+            720
         )
     );    
 

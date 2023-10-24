@@ -24,5 +24,6 @@ private:
 private:
     //SoccerCamRecorder::VideoReader videoReader;
     Scope<SoccerCamRecorder::VideoReader> videoReader;
+
 };
 

@@ -3,72 +3,84 @@
 //
 
 #pragma once
+#include "SoccerVisualization/Core/Base.h"
 
+#include <opencv2/opencv.hpp>
+#include <opencv2/cudaimgproc.hpp>
+#include <opencv2/cudawarping.hpp>
+#include <opencv2/cudaarithm.hpp>
+#include <opencv2/cudaimgproc.hpp>
+#include <opencv2/cudafeatures2d.hpp>
+#include <opencv2/shape/shape_transformer.hpp>
+#include <opencv2/cudacodec.hpp>
+#include "opencv2/opencv_modules.hpp"
+#include <opencv2/core.hpp>
+#include <opencv2/cudacodec.hpp>
+#include <opencv2/highgui.hpp>
 
 namespace SoccerCamRecorder {
     class VideoUtils {
     public:
-        ///Readers
-//        static void OpenStream(const std::string &path, cv::VideoCapture &reader) {
-//            try {
-//                reader = cv::VideoCapture(path);
-//            } catch (cv::Exception &e) {
-//                CORE_ERROR(e.what());
-//                throw e;
-//            }
-//        }
-//
-//        static void OpenStream(const std::string &path, cv::VideoCapture &reader, const cv::Size &size) {
-//            try {
-//                reader = cv::VideoCapture(path);
-//            } catch (cv::Exception &e) {
-//                CORE_ERROR(e.what());
-//                throw e;
-//            }
-//
-//            try {
-//                reader.set(cv::CAP_PROP_FRAME_WIDTH, size.width);
-//            } catch (cv::Exception &e) {
-//                CORE_ERROR(e.what());
-//                throw e;
-//            }
-//
-//            try {
-//                reader.set(cv::CAP_PROP_FRAME_HEIGHT, size.height);
-//            } catch (cv::Exception &e) {
-//                CORE_ERROR(e.what());
-//                throw e;
-//            }
-//        }
-//
-//        static void OpenStream(const std::string &path, cv::VideoCapture &reader, const cv::Size &size, int fps) {
-//            try {
-//                reader = cv::VideoCapture(path);
-//            } catch (cv::Exception &e) {
-//                CORE_ERROR(e.what());
-//                throw e;
-//            }
-//            try {
-//                reader.set(cv::CAP_PROP_FRAME_WIDTH, size.width);
-//            } catch (cv::Exception &e) {
-//                CORE_ERROR(e.what());
-//                throw e;
-//            }
-//
-//            try {
-//                reader.set(cv::CAP_PROP_FRAME_HEIGHT, size.height);
-//            } catch (cv::Exception &e) {
-//                CORE_ERROR(e.what());
-//                throw e;
-//            }
-//
-//            try {
-//                reader.set(cv::CAP_PROP_FPS, fps);
-//            } catch (cv::Exception &e) {
-//                CORE_ERROR(e.what());
-//                throw e;
-//            }
-//        }
+        static void OpenStream(const std::string &path, cv::VideoCapture &reader) {
+            try {
+                reader = cv::VideoCapture(path);
+            } catch (cv::Exception &e) {
+                CORE_ERROR(e.what());
+                throw e;
+            }
+        }
+
+        static void OpenStream(const std::string &path, cv::VideoCapture &reader, const cv::Size &size) {
+            try {
+                reader = cv::VideoCapture(path);
+            } catch (cv::Exception &e) {
+                CORE_ERROR(e.what());
+                throw e;
+            }
+
+            try {
+                reader.set(cv::CAP_PROP_FRAME_WIDTH, size.width);
+            } catch (cv::Exception &e) {
+                CORE_ERROR(e.what());
+                throw e;
+            }
+
+            try {
+                reader.set(cv::CAP_PROP_FRAME_HEIGHT, size.height);
+            } catch (cv::Exception &e) {
+                CORE_ERROR(e.what());
+                throw e;
+            }
+        }
+
+        static void OpenStream(const std::string &path, cv::VideoCapture &reader, const cv::Size &size, int fps) {
+            try {
+                reader = cv::VideoCapture(path);
+            } catch (cv::Exception &e) {
+                CORE_ERROR(e.what());
+                throw e;
+            }
+            try {
+                reader.set(cv::CAP_PROP_FRAME_WIDTH, size.width);
+            } catch (cv::Exception &e) {
+                CORE_ERROR(e.what());
+                throw e;
+            }
+
+            try {
+                reader.set(cv::CAP_PROP_FRAME_HEIGHT, size.height);
+            } catch (cv::Exception &e) {
+                CORE_ERROR(e.what());
+                throw e;
+            }
+
+            try {
+                reader.set(cv::CAP_PROP_FPS, fps);
+            } catch (cv::Exception &e) {
+                CORE_ERROR(e.what());
+                throw e;
+            }
+        }
 
         static cv::Ptr<cv::cudacodec::VideoReader> OpenStream(const std::string path){
             try {
