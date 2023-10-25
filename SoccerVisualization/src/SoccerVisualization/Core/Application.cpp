@@ -10,6 +10,9 @@ namespace SoccerCamRecorder {
 
     Application::Application(const SoccerCamRecorder::ApplicationSpecification &specification) {
         s_Instance = this;
+
+        m_Window = WindowsWindow::Create(WindowProps(m_Specification.Name));
+        
     }
 
     Application::~Application() {
@@ -37,9 +40,12 @@ namespace SoccerCamRecorder {
         CORE_INFO("Running application");
 
         while (m_Running) {
+
             for (auto layer : m_LayerStack) {
                 layer->OnUpdate();
-            }            
+            }         
+
+            m_Window->OnUpdate();
         }
 
         CORE_INFO("Application closed");

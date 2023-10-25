@@ -11,7 +11,7 @@ IncludeDir = {}
 IncludeDir["OpenCV"] = "%{OpenCV_DIRINC}"
 IncludeDir["GLFW"]   = "%{wks.location}/SoccerVisualization/vendor/GLFW/include"
 IncludeDir["Glad"]   = "%{wks.location}/SoccerVisualization/vendor/Glad/include"
-IncludeDir["ImGui"]  = "%{wks.location}/SoccerVisualization/vendor/ImGui"
+IncludeDir["ImGui"]  = "D:/RecordingAnalyzerImgui/SoccerCamRecorder/SoccerVisualization/vendor/imgui"
 
 LibraryDir = {}
 LibraryDir["OpenCV"] = "%{OpenCV_DIRLIB}"  -- Assuming the library files are in the 'lib' sub-directory

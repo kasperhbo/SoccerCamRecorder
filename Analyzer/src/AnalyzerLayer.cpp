@@ -4,6 +4,7 @@
 
 #include "AnalyzerLayer.h"
 #include "SoccerVisualization/Utils/TimeUtils.h"
+#include "SoccerVisualization/Platforms/Windows/WindowsWindow.h"
 #include "SoccerVisualization/VideoProcessing/Soc_VideoProcessor.h"
 #include <chrono>
 #include <imgui/imgui.h>
@@ -17,12 +18,10 @@ AnalyzerLayer::AnalyzerLayer()
 
 void AnalyzerLayer::OnAttach() {
     CL_WARN("ExampleLayer::OnAttach");
-	
 }
 
 void AnalyzerLayer::OnUpdate()
 {    
-    CL_TRACE("ExampleLayer::OnUpdate");	
 }
 
 void AnalyzerLayer::OnDetach() {

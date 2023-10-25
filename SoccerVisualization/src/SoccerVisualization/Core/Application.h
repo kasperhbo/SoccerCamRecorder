@@ -9,6 +9,8 @@
 #include "SoccerVisualization/Utils/TimeUtils.h"
 #include "SoccerVisualization/Core/LayerStack.h"
 
+#include "SoccerVisualization/Platforms/Windows/WindowsWindow.h"
+
 int main(int argc, char** argv);
 
 namespace SoccerCamRecorder {
@@ -40,7 +42,8 @@ namespace SoccerCamRecorder {
         void Close();
 
         static Application& Get() { return *s_Instance; }
-        
+        WindowsWindow& GetWindow() { return *m_Window; }
+
         const ApplicationSpecification& GetSpecification() const { return m_Specification; }
         void PushLayer(Layer* layer);
         void PopLayer(Layer *layer);
@@ -51,6 +54,7 @@ namespace SoccerCamRecorder {
     private:
         ApplicationSpecification m_Specification;
         bool m_Running = true;
+        Scope<WindowsWindow> m_Window;
         std::tm m_LastFrameTime = TimeUtils::GetCurrentTimestamp();
 
         std::vector<std::function<void()>> m_MainThreadQueue;
