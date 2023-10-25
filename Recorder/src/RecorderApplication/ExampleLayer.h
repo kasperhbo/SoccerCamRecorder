@@ -1,6 +1,5 @@
 #pragma once
 
-#include "SoccerVisualization/VideoReader/VideoReader.h"
 #include <SoccerVisualization.h>
 
 class ExampleLayer : public SoccerCamRecorder::Layer
@@ -16,15 +15,5 @@ public:
 
     void OnUpdate() override;
 
-
-
-private:
-
-
-private:
-    //SoccerCamRecorder::VideoReader videoReader;
-    Scope<SoccerCamRecorder::VideoReader> videoReaderLeft;
-    Scope<SoccerCamRecorder::VideoReader> videoReaderRight;
-    Scope<SoccerCamRecorder::VideoProcessor> videoProcessor;
 };
 

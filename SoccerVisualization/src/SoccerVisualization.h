@@ -10,9 +10,6 @@
 #include "SoccerVisualization/Core/Layer.h"
 #include "SoccerVisualization/Utils/Log.h"
 
-#include "SoccerVisualization/VideoProcessing/VideoProcessor.h"
-#include "SoccerVisualization/VideoReader/VideoReader.h" 
-
 #include <iostream>
 #include <memory>
 #include <utility>
