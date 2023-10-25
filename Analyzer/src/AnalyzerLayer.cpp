@@ -6,6 +6,8 @@
 #include "SoccerVisualization/Utils/TimeUtils.h"
 #include "SoccerVisualization/VideoProcessing/Soc_VideoProcessor.h"
 #include <chrono>
+#include <imgui/imgui.h>
+
 
 AnalyzerLayer::AnalyzerLayer()
 : Layer("Example")

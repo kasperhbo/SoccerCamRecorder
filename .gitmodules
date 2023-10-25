@@ -3,5 +3,4 @@
 	url = https://github.com/TheCherno/glfw
 [submodule "SoccerVisualization/vendor/imgui"]
 	path = SoccerVisualization/vendor/imgui
-	url = https://github.com/TheCherno/imgui
-	branch = docking
+	url = https://github.com/ocornut/imgui.git

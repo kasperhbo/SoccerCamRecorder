@@ -26,18 +26,24 @@ project "SoccerVisualization"
 		"src",
         "vendor/fmt/include",
 		"vendor/spdlog/include",
-		"%{IncludeDir.OpenCV}"
+		"%{IncludeDir.OpenCV}",
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}",
 	}
 
 
     libdirs
 	{
-		"%{LibraryDir.OpenCV}" -- Add the library directory for OpenCV here
+		"%{LibraryDir.OpenCV}", -- Add the library directory for OpenCV here=
 	}
 
     links
 	{
         "%{Library.OpenCV}",
+		"GLFW",
+		"Glad",
+		"ImGui",
 	}
     
     flags { "NoPCH" }

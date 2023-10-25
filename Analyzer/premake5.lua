@@ -21,17 +21,32 @@ project "Analyzer"
 		"%{wks.location}/SoccerVisualization/vendor/spdlog/include",
 		"%{wks.location}/SoccerVisualization/src",
 		"%{wks.location}/SoccerVisualization/vendor",
+		"%{IncludeDir.OpenCV}",
+	}
+
+	libdirs
+	{
+		"%{LibraryDir.OpenCV}", -- Add the library directory for OpenCV here=
 	}
 
     links
 	{
-		"SoccerVisualization"
+		"SoccerVisualization",
+		"%{Library.OpenCV}",
 	}
 
     
     
 	filter "system:windows"
-    systemversion "latest"
+    	systemversion "latest"
+
+		defines
+        {
+        }
+
+        links
+        {
+        }
 
     filter "configurations:Release"
         defines "SoccerVisualization_RELEASE"
