@@ -1,0 +1,3 @@
+[submodule "SoccerVisualization/vendor/GLFW"]
+	path = SoccerVisualization/vendor/GLFW
+	url = https://github.com/TheCherno/glfw
