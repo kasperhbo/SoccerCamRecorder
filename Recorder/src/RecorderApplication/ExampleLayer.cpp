@@ -23,24 +23,24 @@ void ExampleLayer::OnAttach() {
 	const std::string clipLeftName = "D:\\opencv\\assets\\Recordings\\Left_0009.mp4";
 	const std::string clipRightName = "D:\\OPENCV\\Assets\\Recordings\\Right_0009.mp4";
 	
-	Soc_VideoProcessor* processor = new Soc_VideoProcessor(clipLeftName, clipRightName, clipSaveName, true, true, 25.0, 4000, 1500);
+	Soc_VideoProcessor* processor = new Soc_VideoProcessor(clipLeftName, clipRightName, clipSaveName, true, false, 25.0, 4000, 1500);
 	processor->Initialize();
 
 	float delay = 1000 / 25.0;
 
 	while (true) {
-		clock_t startTime = clock();
+		//clock_t startTime = clock();
 
 		if (!processor->ProcessFrame())
 		{
 			processor->Terminate();
+			Application::Get().Close();
 			break;
 		}
 
-		while (clock() - startTime < delay) {
+		/*while (clock() - startTime < delay) {
 			int key = cv::waitKey(1);
-		}
-
+		}*/
 	}
 }
 

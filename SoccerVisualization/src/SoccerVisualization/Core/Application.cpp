@@ -18,6 +18,8 @@ namespace SoccerCamRecorder {
 
     void Application::Close() {
         CORE_INFO("Closing application");
+        m_Running = false;
+        
     }
 
     void Application::PushLayer(Layer* layer)
@@ -39,5 +41,7 @@ namespace SoccerCamRecorder {
                 layer->OnUpdate();
             }            
         }
+
+        CORE_INFO("Application closed");
     }
 };

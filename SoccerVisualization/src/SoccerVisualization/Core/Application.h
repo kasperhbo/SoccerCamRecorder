@@ -40,7 +40,7 @@ namespace SoccerCamRecorder {
         void Close();
 
         static Application& Get() { return *s_Instance; }
-
+        
         const ApplicationSpecification& GetSpecification() const { return m_Specification; }
         void PushLayer(Layer* layer);
         void PopLayer(Layer *layer);

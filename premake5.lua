@@ -3,7 +3,7 @@ include "Dependencies.lua"
 
 workspace "SoccerVisualization"
 	architecture "x86_64"
-	startproject "Recorder"
+	startproject "Analyzer"
 
 	configurations
 	{
@@ -35,5 +35,6 @@ group ""
 -- group ""
 
 group "Misc"
+	include "Analyzer"
 	include "Recorder"
 group ""
