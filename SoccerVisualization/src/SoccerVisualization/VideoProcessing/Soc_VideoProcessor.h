@@ -26,7 +26,7 @@
 	
 
 
-class VideoProcessor
+class Soc_VideoProcessor
 {
 public:
 	/// <summary>
@@ -40,7 +40,7 @@ public:
 	/// <param name="fps">       The fps</param>
 	/// <param name="width">     The target width</param>
 	/// <param name="height">    The target height</param>
-	VideoProcessor(
+	Soc_VideoProcessor(
 		const std::string fileLeft, const std::string fileRight, const std::string finalFile, 
 		const bool saveVideo = false, const bool showVideo = true, const double fps = 25.0, const int width = 1920, const int height = 1080); 
 	
@@ -48,19 +48,19 @@ public:
 	/// <summary>
 	/// Destructor
 	/// </summary>
-	~VideoProcessor();
+	~Soc_VideoProcessor();
 
 	/// <summary>
 	/// Initialize the video processor
 	/// </summary>
-	/// <returns> If the video processor was initialized succesfully</returns>
+	/// <returns> If the video processor was initialized successfully</returns>
 	bool Initialize();
 	
 
 	/// <summary>
 	/// Process the frame
 	/// </summary>
-	/// <returns>If the frame was processed succesfully</returns>
+	/// <returns>If the frame was processed successfully</returns>
 	bool ProcessFrame();
 
 
@@ -77,7 +77,7 @@ public:
 	void ReleaseGPUMats();
 
 	/// <summary>
-	/// Cleanup all cpu mats
+	/// Cleanup all CPU mats
 	/// </summary>
 	void ReleaseCPUMats();
 

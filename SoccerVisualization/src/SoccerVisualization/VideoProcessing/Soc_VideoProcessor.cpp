@@ -1,22 +1,22 @@
-#include "VideoProcessor.h"
+#include "Soc_VideoProcessor.h"
 
 
-VideoProcessor::VideoProcessor(const std::string fileLeft, const std::string fileRight, const std::string finalFile, const bool saveVideo, const bool showVideo, const double fps, const int width, const int height)
+Soc_VideoProcessor::Soc_VideoProcessor(const std::string fileLeft, const std::string fileRight, const std::string finalFile, const bool saveVideo, const bool showVideo, const double fps, const int width, const int height)
 	: fileLeft(fileLeft), fileRight(fileRight), finalFile(finalFile), saveVideo(saveVideo), showVideo(showVideo), fps(fps), finalWidth(width), finalHeight(height)
 {
 
 }
 
-VideoProcessor::~VideoProcessor()
+Soc_VideoProcessor::~Soc_VideoProcessor()
 {
 	Terminate();
 }
 
-bool VideoProcessor::Initialize()
+bool Soc_VideoProcessor::Initialize()
 {
 
 	CORE_INFO(
-		"VideoProcessor: Initializing. FileLeft: {0}, FileRight: {1}, FinalFile: {2}, SaveVideo: {3}, ShowVideo: {4}, FPS: {5}, Width: {6}, Height: {7}",
+		"Soc_VideoProcessor: Initializing. FileLeft: {0}, FileRight: {1}, FinalFile: {2}, SaveVideo: {3}, ShowVideo: {4}, FPS: {5}, Width: {6}, Height: {7}",
 		fileLeft, fileRight, finalFile, saveVideo, showVideo, fps, finalWidth, finalHeight);
 
 	videoReader = new Soc_VideoReader(fileLeft, fileRight);
@@ -74,21 +74,21 @@ bool VideoProcessor::Initialize()
 
 	CreateImageMaps();
 
-	CORE_INFO("VideoProcessor: Initialized");
+	CORE_INFO("Soc_VideoProcessor: Initialized");
 	return true;
 }
 
-bool VideoProcessor::ProcessFrame()
+bool Soc_VideoProcessor::ProcessFrame()
 {
 	if (videoReader->Read(frameLeft, frameRight))
 	{
 		CORE_INFO(
-			"VideoProcessor: Processig.... FileLeft: {0}, FileRight: {1}, FinalFile: {2}, SaveVideo: {3}, ShowVideo: {4}, FPS: {5}, Width: {6}, Height: {7}",
+			"Soc_VideoProcessor: Processig.... FileLeft: {0}, FileRight: {1}, FinalFile: {2}, SaveVideo: {3}, ShowVideo: {4}, FPS: {5}, Width: {6}, Height: {7}",
 			fileLeft, fileRight, finalFile, saveVideo, showVideo, fps, finalWidth, finalHeight);
 		
 		int64 startTicks = cv::getTickCount();
 
-		//Undistort frames
+		//Remove Barrel Distortion frames
 		CudaUtil::Remap(frameLeft, frameLeft, barrelUndistortMapLeftX, barrelUndistortMapLeftY);
 		CudaUtil::Remap(frameRight, frameRight, barrelUndistortMapRightX, barrelUndistortMapRightY);
 
@@ -99,7 +99,7 @@ bool VideoProcessor::ProcessFrame()
 		CudaUtil::Remap(frameLeft, frameLeft, positionChangeMapLeftX, positionChangeMapLeftY);
 		CudaUtil::Remap(frameRight, frameRight, positionChangeMapRightX, positionChangeMapRightY);
 
-		//Concat frames
+		//Concatenate frames
 		ImageUtil::HConcat(frameLeft, frameRight, frameFinal);
 
 		//Resize the image to the output width and height
@@ -120,46 +120,39 @@ bool VideoProcessor::ProcessFrame()
 		int64 endTicks = cv::getTickCount(); // end tick count
 		double timeInSeconds = (double)(endTicks - startTicks) / cv::getTickFrequency();
 
-		CORE_INFO("VideoProcessor: Finished processing, frame time was: {0}", timeInSeconds);
+		CORE_INFO("Soc_VideoProcessor: Finished processing, frame time was: {0}", timeInSeconds);
 		return true;
 	}
 	else
 	{
-		CORE_INFO("VideoProcessor: Finished processing");
+		CORE_INFO("Soc_VideoProcessor: Finished processing");
 		return false;
 	}
-
-
-
 }
 
-void VideoProcessor::ReleaseFrames()
+void Soc_VideoProcessor::ReleaseFrames()
 {
 	frameLeft.release();
 	frameRight.release();
 	frameFinal.release();
 }
 
-
-
-
-void VideoProcessor::ReleaseViewers()
+void Soc_VideoProcessor::ReleaseViewers()
 {
 	videoViewer->Terminate();
 }
 
-void VideoProcessor::ReleaseReaders()
+void Soc_VideoProcessor::ReleaseReaders()
 {
 	videoReader->Terminate();
 }
 
-void VideoProcessor::ReleaseWriters()
+void Soc_VideoProcessor::ReleaseWriters()
 {
 	videoWriter->Terminate();
 }
 
-
-void VideoProcessor::ReleaseGPUMats() {
+void Soc_VideoProcessor::ReleaseGPUMats() {
 
 	barrelUndistortMapLeftX.release();
 	barrelUndistortMapLeftY.release();
@@ -177,12 +170,11 @@ void VideoProcessor::ReleaseGPUMats() {
 	positionChangeMapRightY.release();
 }
 
-void VideoProcessor::ReleaseCPUMats() {
+void Soc_VideoProcessor::ReleaseCPUMats() {
 
 }
 
-
-bool VideoProcessor::Terminate()
+bool Soc_VideoProcessor::Terminate()
 {
 	void ReleaseFrames();
 	void ReleaseClips();
@@ -191,13 +183,13 @@ bool VideoProcessor::Terminate()
 	return true;
 }
 
-void VideoProcessor::CreateImageMaps() {
+void Soc_VideoProcessor::CreateImageMaps() {
 	CreateBarrelUndistortMaps();
 	CreateShiftMap();
 	CreatePointShiftMaps();
 }
 
-void VideoProcessor::CreateBarrelUndistortMaps()
+void Soc_VideoProcessor::CreateBarrelUndistortMaps()
 {
 	cv::Mat cameraMatrix = (cv::Mat_<double>(3, 3) << 3000, 0, 4000 / 2, 0, 3000, 3000 / 2, 0, 0, 1);
 	//barrel undistort
@@ -206,13 +198,13 @@ void VideoProcessor::CreateBarrelUndistortMaps()
 	
 }
 
-void VideoProcessor::CreateShiftMap() {
+void Soc_VideoProcessor::CreateShiftMap() {
 	//right
-	CORE_INFO("VideoProcessor: Creating shift map");
+	CORE_INFO("Soc_VideoProcessor: Creating shift map");
 	CudaUtil::MakeShiftYMap(rightFrameYShift, originalWidth, originalHeight, shiftMapRightX, shiftMapRightY);
 }
 
-void VideoProcessor::CreatePointShiftMaps() {
+void Soc_VideoProcessor::CreatePointShiftMaps() {
 	//Position change
 	float midShiftLeft = 310;
 	float midShiftRightTopLeft = 260;

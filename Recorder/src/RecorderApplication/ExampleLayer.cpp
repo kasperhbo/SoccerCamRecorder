@@ -4,7 +4,7 @@
 
 #include "ExampleLayer.h"
 #include "SoccerVisualization/Utils/TimeUtils.h"
-#include "SoccerVisualization/VideoProcessing/VideoProcessor.h"
+#include "SoccerVisualization/VideoProcessing/Soc_VideoProcessor.h"
 #include <chrono>
 
 ExampleLayer::ExampleLayer()
@@ -23,7 +23,7 @@ void ExampleLayer::OnAttach() {
 	const std::string clipLeftName = "D:\\opencv\\assets\\Recordings\\Left_0009.mp4";
 	const std::string clipRightName = "D:\\OPENCV\\Assets\\Recordings\\Right_0009.mp4";
 	
-	VideoProcessor* processor = new VideoProcessor(clipLeftName, clipRightName, clipSaveName, true, true, 25.0, 4000, 1500);
+	Soc_VideoProcessor* processor = new Soc_VideoProcessor(clipLeftName, clipRightName, clipSaveName, true, true, 25.0, 4000, 1500);
 	processor->Initialize();
 
 	float delay = 1000 / 25.0;
