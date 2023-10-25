@@ -1,3 +1,7 @@
 [submodule "SoccerVisualization/vendor/GLFW"]
 	path = SoccerVisualization/vendor/GLFW
 	url = https://github.com/TheCherno/glfw
+[submodule "SoccerVisualization/vendor/imgui"]
+	path = SoccerVisualization/vendor/imgui
+	url = https://github.com/TheCherno/imgui
+	branch = docking
