@@ -6,7 +6,20 @@
 
 #include <opencv2/core.hpp>
 #include <opencv2/opencv.hpp>
+#include <opencv2/cudaimgproc.hpp>
+#include <opencv2/cudawarping.hpp>
+#include <opencv2/cudaarithm.hpp>
+#include <opencv2/cudaimgproc.hpp>
+#include <opencv2/cudafeatures2d.hpp>
+#include <opencv2/shape/shape_transformer.hpp>
+#include <opencv2/cudacodec.hpp>
+#include <vector>
+#include <chrono>
+#include <iostream>
+#include <cmath>
+
 #include "CudaUtils.h"
+
 
 namespace SoccerCamRecorder {
 

@@ -128,7 +128,7 @@ namespace SoccerCamRecorder {
             cv::cuda::resize(src, dst, cv::Size(width, height));
         }
 
-        static void HConcat(const cv::cuda::GpuMat &left, const cv::cuda::GpuMat &right, cv::cuda::GpuMat &result) {
+        static void HConcat(const cv::cuda::GpuMat left, const cv::cuda::GpuMat right, cv::cuda::GpuMat& result) {
             int size_cols = left.cols + right.cols;
             int size_rows = std::max(left.rows, right.rows);
             cv::cuda::GpuMat hconcat(size_rows, size_cols, left.type());

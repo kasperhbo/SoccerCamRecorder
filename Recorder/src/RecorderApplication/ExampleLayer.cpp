@@ -65,7 +65,7 @@ void ExampleLayer::OnUpdate() {
     cv::Mat frame;
 
     videoProcessor->GetFinalFrame().download(frame);
-
+    cv::resize(frame, frame, cv::Size(1280, 720));
     cv::imshow("Right", frame);
 
     auto end = std::chrono::high_resolution_clock::now();  // Store the end time

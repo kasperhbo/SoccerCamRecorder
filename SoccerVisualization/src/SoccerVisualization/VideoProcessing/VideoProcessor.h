@@ -51,7 +51,7 @@ namespace SoccerCamRecorder
 
 		VideoProcessorPropsFinal(
 			uint32_t width = 4000,
-			uint32_t height = 1500,
+			uint32_t height = 3000,
 			uint fps = 25
 		) : finalWidth(width), finalHeight(height), fps(fps)
 		{
