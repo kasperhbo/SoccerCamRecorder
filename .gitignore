@@ -127,3 +127,5 @@ fabric.properties
 /scripts/__pycache__/Utils.cpython-310.pyc
 /Recorder/soccer_cam_recorder.log
 /vendor/premake/bin/LICENSE.txt
+
+SoccerVisualization/vendor/
